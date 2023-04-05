@@ -9,8 +9,11 @@ const allusers = require("./routes/allusers");
 const app = express();
 
 app.listen(5000);
-mongoose.connect('mongodb://localhost/data-users',{  useNewUrlParser: true,
-    useUnifiedTopology: true,}).then(_ => console.log("Connected !")).catch(err => console.log("Error" + err.toString()))
+const uri = 'mongodb+srv://naser0077:naser123@cluster0.lmjquzp.mongodb.net/?retryWrites=true&w=majority';
+
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('Connected to MongoDB Atlas'))
+  .catch(err => console.error('Error connecting to MongoDB Atlas', err));
 
 app.use(bodyParser.json());
 app.use(morgan('dev'));
