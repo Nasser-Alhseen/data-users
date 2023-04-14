@@ -6,6 +6,7 @@ const login = require("./routes/login.js");
 const deleteUser = require("./routes/delete");
 const addUser = require("./routes/adduser");
 const allusers = require("./routes/allusers");
+const balance = require("./routes/updata_balance");
 const app = express();
 
 app.listen(5000);
@@ -25,7 +26,8 @@ app.use((req, res, next) => {
     next();
 })/
 app.use("/login", login);
-app.use("/deleteUser", deleteUser);
-app.use("/addUser", addUser);
+app.use("/deleteuser", deleteUser);
+app.use("/adduser", addUser);
 app.use("/allusers", allusers);
+app.use("/balance", balance);
 

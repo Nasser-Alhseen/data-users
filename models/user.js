@@ -12,6 +12,10 @@ const userSchema=mongoose.Schema({
       loggedin:{
         type:String,
         default:'not logged'
+      },
+      balance:{
+        type:Number,
+        default:20000
       }
 })
 module.exports=mongoose.model('User',userSchema,'Users');

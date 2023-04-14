@@ -11,7 +11,7 @@ loginRouter.post("/", async (req, res) => {
     if (user.loggedin == "logged")
       return res
         .status(404)
-        .json({ message: "there is a user with this account" });
+        .json({ message: "a user is already signed with thgis account" });
     await User.updateOne(
       { email: req.body.email },
       { $set: { loggedin: "logged" } }

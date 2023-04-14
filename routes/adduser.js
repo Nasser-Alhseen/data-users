@@ -9,7 +9,7 @@ addRouter.post("/", async (req, res) => {
     if (user)
       return res
         .status(404)
-        .json({ message: "there is a user with this name" });
+        .json({ message: "there is a user with this Email" });
     const newUser =  User({
       email: req.body.email,
       password: req.body.password,
